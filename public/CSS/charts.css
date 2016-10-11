@@ -1,0 +1,24 @@
+#charts {
+  position: relative;
+}
+
+#chart-locationXY {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+#chart-locationYZ {
+  position: absolute;
+  top: 0px;
+  left: 600px;
+}
+#chart-locationZX {
+  position: absolute;
+  top: 450px;
+  left: 0px;
+}
+#chart-locationXY2 {
+  position: absolute;
+  top: 450px;
+  left: 600px;	
+}

@@ -1,0 +1,91 @@
+<h1>Tables for XY, YZ and ZX pearson correlation coefficients</h1>
+<div id="table-location">
+	
+</div>
+<br/>
+<!-- Location where the chart will be added -->
+<h1>Charts for XY, YZ and ZX pearson correlation coefficients</h1>
+<div  id="charts">
+	<div id="chart-locationXY">
+		
+	</div>
+	<div id="chart-locationYZ">
+
+	</div>
+	<div id="chart-locationZX">
+
+	</div>
+	<div id="chart-locationXY2">
+
+	</div>
+</div>
+<script id="tabular-template" type="text/html">
+\{{#each this}}
+<h2>\{{this.name}}</h2>
+<table class="table table-bordered">
+<thead>
+	<tr>
+		<td>Accelerometer</td>
+		<td>Case 1</td><td>Case 2</td><td>Case 3</td>
+	</tr>
+</thead>
+<tbody>
+    <tr>
+      <td>X</td>\{{#each this.acc_x}} <td>\{{this}}</td> \{{/each}}
+    </tr>
+    <tr>
+      <td>Y</td>\{{#each this.acc_y}} <td>\{{this}}</td> \{{/each}}
+    </tr>
+    <tr>
+      <td>Z</td>\{{#each this.acc_z}} <td>\{{this}}</td> \{{/each}}
+    </tr>
+  </tbody>
+  <thead>
+	<tr>
+		<td>Magnetometer</td>
+	</tr>
+</thead>
+<tbody>
+    <tr>
+      <td>X</td>\{{#each this.mag_x}} <td>\{{this}}</td> \{{/each}}
+    </tr>
+    <tr>
+      <td>Y</td>\{{#each this.mag_y}} <td>\{{this}}</td> \{{/each}}
+    </tr>
+    <tr>
+      <td>Z</td>\{{#each this.mag_z}} <td>\{{this}}</td> \{{/each}}
+    </tr>
+  </tbody>
+ </table>
+ <table class="table table-bordered">
+  <thead>
+  	<tr>
+  		<td>Correlation coefficient</td>
+  		<td>Accelerometer Case1</td>
+  		<td>Accelerometer Case2</td>
+  		<td>Accelerometer Case3</td>
+  		<td>Magnetometer Case 1</td>
+  		<td>Magnetometer Case 2</td>
+  		<td>Magnetometer Case 3</td>
+  	</tr>
+  </thead>
+  <tbody>
+  	<tr>
+  		<td>XY</td>
+  		\{{#each this.acc_xy}}<td>\{{this}}</td>\{{/each}}
+  		\{{#each this.mag_xy}}<td>\{{this}}</td>\{{/each}}
+  	</tr>
+  	<tr>
+  		<td>YZ</td>
+  		\{{#each this.acc_yz}}<td>\{{this}}</td>\{{/each}}
+  		\{{#each this.mag_yz}}<td>\{{this}}</td>\{{/each}}
+  	</tr>
+  	<tr>
+  		<td>ZX</td>
+  		\{{#each this.acc_zx}}<td>\{{this}}</td>\{{/each}}
+  		\{{#each this.mag_zx}}<td>\{{this}}</td>\{{/each}}
+  	</tr>
+  </tbody>
+</table>
+\{{/each}}
+</script>
