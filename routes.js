@@ -1,5 +1,6 @@
 var exphbs  = require('express-handlebars');
 var process_store = require('./utils/processStore');
+var users = require('./models/model');
 
 module.exports = function(app) { 
 	/**
@@ -10,15 +11,23 @@ module.exports = function(app) {
 	app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 	app.set('view engine', 'handlebars');
 	/**
+	* exports all records to a csv
+	**/
+	app.get("/exportData",function(req,res){
+		var status = process_store.exportData();
+		status.then(function(doc){
+			process_store.writeToCSV(doc);
+			res.json(doc);
+		})
+	});
+	/**
 	* returns all records of a particular user
 	**/
 	app.post("/walkers",function(req,res){
-		var response = [];
-		var name = req.body;
-				users.find({'name': { $in: [name.name1, name.name2]}},function(err, user){				
-				  if ( err ) throw err;
-					  res.json(user);
-			});	 
+		var results = process_store.walkers(req);
+		results.then(function(doc){
+			res.send(doc);
+		});
 	});
 	/**
 	* following three functions recieve data from client

@@ -1,7 +1,7 @@
 var chartData;
 var body = {
-  "name1":"bob",
-  "name2":"marley"
+  "name1":"bobby",
+  "name2":"bobby"
 };
 function make_plottable_data(x,y){
   var plottable = [];
@@ -20,7 +20,6 @@ $(function(){
     contentType: 'application/json',
     type: 'POST',
     success : function(data) {
-
       var template = Handlebars.compile($("#tabular-template").html());
       $("#table-location").html(template(data));
 
