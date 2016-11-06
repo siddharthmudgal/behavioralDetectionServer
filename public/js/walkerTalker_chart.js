@@ -1,7 +1,7 @@
 var chartData;
 var body = {
-  "name1":"bobby",
-  "name2":"bobby"
+  "name1":"user1",
+  "name2":"user2"
 };
 function make_plottable_data(x,y){
   var plottable = [];
@@ -20,8 +20,6 @@ $(function(){
     contentType: 'application/json',
     type: 'POST',
     success : function(data) {
-      var template = Handlebars.compile($("#tabular-template").html());
-      $("#table-location").html(template(data));
 
       var category = [{"categories": [{
             "verticallinecolor": "666666",
@@ -43,7 +41,7 @@ $(function(){
                   "anmimation" : 1,
                   "theme": "zune",
                   "caption": "XY",
-                  "subcaption": "XY for "+data[0].name,
+                  "subcaption": "XY for " + data[0].name + " and " + data[30].name,
                   "yaxisname": "Y",
                   "xaxisname": "X",            
                   "showcanvasborder": "1",
@@ -55,34 +53,24 @@ $(function(){
               "dataset": [{
                   "drawLine":"0",
                   "lineColor": "#5DA5DA",
-                  "seriesname": "XY1",
+                  "seriesname": "User1",
                   "color": "#5DA5DA",
                   "anchorsides": "3",
                   "anchorradius": "4",
                   "anchorbgcolor": "#5DA5DA",
                   "anchorbordercolor": "#5DA5DA",
-                  "data": make_plottable_data(data[0].acc_y[0],data[0].acc_z[0])
+                  "data": make_plottable_data(data[0].acc_x,data[0].acc_y)
               }, {
                   "drawLine":"0",
                   "lineColor": "#f8bd19",
-                  "seriesname": "XY2",
+                  "seriesname": "User2",
                   "color": "#f8bd19",
                   "anchorsides": "4",
                   "anchorradius": "4",
                   "anchorbgcolor": "#f8bd19",
                   "anchorbordercolor": "#f8bd19",
-                  "data": make_plottable_data(data[0].acc_y[1],data[0].acc_z[1])
-              },{
-                  "drawLine":"0",
-                  "lineColor": "#60BD68",
-                  "seriesname": "XY3",
-                  "color": "#60BD68",
-                  "anchorsides": "4",
-                  "anchorradius": "4",
-                  "anchorbgcolor": "#60BD68",
-                  "anchorbordercolor": "#60BD68",
-                  "data": make_plottable_data(data[0].acc_y[2],data[0].acc_z[2])
-              },]
+                  "data": make_plottable_data(data[30].acc_x,data[30].acc_y)
+              }]
           }    
       });
       var scatterChartYZ = new FusionCharts({
@@ -96,7 +84,7 @@ $(function(){
               "chart": {
                   "theme": "zune",
                   "caption": "YZ",
-                  "subcaption": "YZ for "+data[0].name,
+                  "subcaption": "YZ for " + data[0].name + " and " + data[30].name,
                   "yaxisname": "Z",
                   "xaxisname": "Y",            
                   "showcanvasborder": "1",
@@ -108,34 +96,24 @@ $(function(){
               "dataset": [{
                   "drawLine":"0",
                   "lineColor": "#5DA5DA",
-                  "seriesname": "YZ1",
+                  "seriesname": "User1",
                   "color": "#5DA5DA",
                   "anchorsides": "3",
                   "anchorradius": "4",
                   "anchorbgcolor": "#5DA5DA",
                   "anchorbordercolor": "#5DA5DA",
-                  "data": make_plottable_data(data[0].acc_x[0],data[0].acc_y[0])
+                  "data": make_plottable_data(data[0].acc_y,data[0].acc_z)
               }, {
                   "drawLine":"0",
                   "lineColor": "#f8bd19",
-                  "seriesname": "YZ2",
+                  "seriesname": "User2",
                   "color": "#f8bd19",
                   "anchorsides": "4",
                   "anchorradius": "4",
                   "anchorbgcolor": "#f8bd19",
                   "anchorbordercolor": "#f8bd19",
-                  "data": make_plottable_data(data[0].acc_x[1],data[0].acc_y[1])
-              },{
-                  "drawLine":"0",
-                  "lineColor": "#60BD68",
-                  "seriesname": "YZ3",
-                  "color": "#60BD68",
-                  "anchorsides": "4",
-                  "anchorradius": "4",
-                  "anchorbgcolor": "#60BD68",
-                  "anchorbordercolor": "#60BD68",
-                  "data": make_plottable_data(data[0].acc_x[2],data[0].acc_y[2])
-              },]
+                  "data": make_plottable_data(data[30].acc_y,data[30].acc_z)
+              }]
           }    
       });
       var scatterChartZX = new FusionCharts({
@@ -150,7 +128,7 @@ $(function(){
                   
                   "theme": "zune",
                   "caption": "ZX",
-                  "subcaption": "ZX for "+data[0].name,
+                  "subcaption": "ZX for " + data[0].name + " and " + data[30].name,
                   "yaxisname": "X",
                   "xaxisname": "Z",            
                   "showcanvasborder": "1",
@@ -168,7 +146,7 @@ $(function(){
                   "anchorradius": "4",
                   "anchorbgcolor": "#5DA5DA",
                   "anchorbordercolor": "#5DA5DA",
-                  "data": make_plottable_data(data[0].acc_x[0],data[0].acc_y[0])
+                  "data": make_plottable_data(data[0].acc_z,data[0].acc_z)
               }, {
                   "drawLine":"0",
                   "lineColor": "#f8bd19",
@@ -178,66 +156,14 @@ $(function(){
                   "anchorradius": "4",
                   "anchorbgcolor": "#f8bd19",
                   "anchorbordercolor": "#f8bd19",
-                  "data": make_plottable_data(data[0].acc_x[1],data[0].acc_y[1])
-              },{
-                  "drawLine":"0",
-                  "lineColor": "#60BD68",
-                  "seriesname": "ZX3",
-                  "color": "#60BD68",
-                  "anchorsides": "4",
-                  "anchorradius": "4",
-                  "anchorbgcolor": "#60BD68",
-                  "anchorbordercolor": "#60BD68",
-                  "data": make_plottable_data(data[0].acc_x[2],data[0].acc_y[2])
-              },]
-          }    
-      });
-      var scatterChartXY2 = new FusionCharts({
-          type: 'selectscatter',
-          id: 'chartXY2',
-          renderAt: 'chart-locationXY2',
-          width: '500',
-          height: '350',
-          dataFormat: 'json',
-          dataSource: {
-              "chart": {
-                  
-                  "theme": "zune",
-                  "caption": "XY for two walkers",
-                  "subcaption": "XY for "+data[0].name+" and "+data[1].name,
-                  "yaxisname": "Y",
-                  "xaxisname": "X",            
-                  "showcanvasborder": "1",
-                  "canvasborderthickness": "0.4",
-                  "canvasborderalpha": "50",
-                  "showXAxisLine": "0",                        
-              },
-              "categories": category["categories"],
-              "dataset": [{
-                  "drawLine":"0",
-                  "lineColor": "#5DA5DA",
-                  "seriesname": "XY->"+data[0].name,
-                  "color": "#5DA5DA",
-                  "anchorsides": "3",
-                  "anchorradius": "4",
-                  "anchorbgcolor": "#5DA5DA",
-                  "anchorbordercolor": "#5DA5DA",
-                  "data": make_plottable_data(data[0].acc_x[1],data[0].acc_y[1])
-              }, {
-                  "drawLine":"0",
-                  "lineColor": "#f8bd19",
-                  "seriesname": "XY->"+data[1].name,
-                  "color": "#f8bd19",
-                  "anchorsides": "4",
-                  "anchorradius": "4",
-                  "anchorbgcolor": "#f8bd19",
-                  "anchorbordercolor": "#f8bd19",
-                  "data": make_plottable_data(data[1].acc_x[0],data[1].acc_y[0])
+                  "data": make_plottable_data(data[30].acc_z,data[30].acc_x)
               }]
           }    
       });
+      
       scatterChartXY.render();scatterChartYZ.render();scatterChartZX.render();
-      scatterChartXY2.render();
+      var template = Handlebars.compile($("#tabular-template").html());
+      $("#table-location").html(template(data));
     }
   });
 });

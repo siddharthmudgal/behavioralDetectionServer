@@ -23,67 +23,29 @@
 \{{#each this}}
 <h2>\{{this.name}}</h2>
 <table class="table table-bordered">
-<thead>
-	<tr>
-		<td>Accelerometer</td>
-		<td>Case 1</td><td>Case 2</td><td>Case 3</td>
-	</tr>
-</thead>
-<tbody>
-    <tr>
-      <td>X</td>\{{#each this.acc_x}} <td>\{{this}}</td> \{{/each}}
-    </tr>
-    <tr>
-      <td>Y</td>\{{#each this.acc_y}} <td>\{{this}}</td> \{{/each}}
-    </tr>
-    <tr>
-      <td>Z</td>\{{#each this.acc_z}} <td>\{{this}}</td> \{{/each}}
-    </tr>
-  </tbody>
-  <thead>
-	<tr>
-		<td>Magnetometer</td>
-	</tr>
-</thead>
-<tbody>
-    <tr>
-      <td>X</td>\{{#each this.mag_x}} <td>\{{this}}</td> \{{/each}}
-    </tr>
-    <tr>
-      <td>Y</td>\{{#each this.mag_y}} <td>\{{this}}</td> \{{/each}}
-    </tr>
-    <tr>
-      <td>Z</td>\{{#each this.mag_z}} <td>\{{this}}</td> \{{/each}}
-    </tr>
-  </tbody>
- </table>
  <table class="table table-bordered">
   <thead>
   	<tr>
   		<td>Correlation coefficient</td>
-  		<td>Accelerometer Case1</td>
-  		<td>Accelerometer Case2</td>
-  		<td>Accelerometer Case3</td>
-  		<td>Magnetometer Case 1</td>
-  		<td>Magnetometer Case 2</td>
-  		<td>Magnetometer Case 3</td>
+  		<td>Accelerometer </td>
+  		<td>Magnetometer </td>
   	</tr>
   </thead>
   <tbody>
   	<tr>
   		<td>XY</td>
-  		\{{#each this.acc_xy}}<td>\{{this}}</td>\{{/each}}
-  		\{{#each this.mag_xy}}<td>\{{this}}</td>\{{/each}}
+  		<td>\{{this.acc_xy}}</td>
+  		<td>\{{this.mag_xy}}</td>
   	</tr>
   	<tr>
   		<td>YZ</td>
-  		\{{#each this.acc_yz}}<td>\{{this}}</td>\{{/each}}
-  		\{{#each this.mag_yz}}<td>\{{this}}</td>\{{/each}}
+  		<td>\{{this.acc_yz}}</td>
+      <td>\{{this.mag_yz}}</td>
   	</tr>
   	<tr>
   		<td>ZX</td>
-  		\{{#each this.acc_zx}}<td>\{{this}}</td>\{{/each}}
-  		\{{#each this.mag_zx}}<td>\{{this}}</td>\{{/each}}
+  		<td>\{{this.acc_zx}}</td>
+      <td>\{{this.mag_zx}}</td>
   	</tr>
   </tbody>
 </table>

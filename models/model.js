@@ -3,7 +3,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;  
 
 var userSchema = mongoose.Schema({    
-     	name : String,     
+     	name : String,
+     	style: String,     
      	acc_x : Schema.Types.Mixed,
 		acc_y : Schema.Types.Mixed,
 		acc_z : Schema.Types.Mixed,

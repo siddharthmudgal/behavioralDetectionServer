@@ -6,8 +6,8 @@ var fs = require('fs');
 * exporting the following functions
 **/
 module.exports = {
-	processStore: function(req){
-		return process_store(req);
+	processStore: function(req,style){
+		return process_store(req,style);
 	},
 	exportData: function(){
 		return exportData();		
@@ -57,7 +57,7 @@ function writeToCSV(users){
 
 	var sample2 = [{"_id":"580ea44d6aded9902059aa30","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"580ea491949a4cec2021312a","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"580ea618fb3ed7f81d9516bd","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818bc0135bb8148201da282","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818bc139df5563c236088e3","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818bcfe0541ad3412644410","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818bd20afcb71e80ca449ee","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818be1e1827686821ab3246","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818be340911a8301ef4b0f4","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818be501a31e73012eea30f","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818be622ac9fe681fad4fe8","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818be622ac9fe681fad4fe9","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818be632ac9fe681fad4fea","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818bf1656a865ec1eb42cf8","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818bf1656a865ec1eb42cf9","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818bf1756a865ec1eb42cfa","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818bf1756a865ec1eb42cfb","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818bf1756a865ec1eb42cfc","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818bf1756a865ec1eb42cfd","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818bf865ef2db7c1fbbd18e","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818bf875ef2db7c1fbbd18f","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818bf875ef2db7c1fbbd190","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818bf875ef2db7c1fbbd191","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818bf875ef2db7c1fbbd192","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818bf875ef2db7c1fbbd193","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818bfaaff3e268822d0e8ed","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818bfd69f87cd64225c21fd","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818bfd69f87cd64225c21fe","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818bfd69f87cd64225c21ff","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818bfd79f87cd64225c2200","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818bfd79f87cd64225c2201","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818bfd79f87cd64225c2202","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818c05b7acf686421acbf2a","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818c05c7acf686421acbf2b","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818c05c7acf686421acbf2c","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818c05c7acf686421acbf2d","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818c05d7acf686421acbf2e","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818c0ef96c0a9041282a955","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0},{"_id":"5818c0f096c0a9041282a956","name":"bobby","acc_x":[[1,2,3,4,5,6,7,8,9]],"acc_y":[[1,2,3,4,5,6,7,8,9]],"acc_z":[[1,2,3,4,5,6,7,8,9]],"mag_x":[[11,22,33,44,55,66,77,88,99]],"mag_y":[[11,22,33,44,55,66,77,88,99]],"mag_z":[[11,22,33,44,55,66,77,88,99]],"acc_xy":[null],"acc_yz":[null],"acc_zx":[null],"mag_xy":[null],"mag_yz":[null],"mag_zx":[null],"__v":0}];
 
-	var headers = ["name","acc_x","acc_y","acc_z","mag_x","mag_y","mag_z","acc_xy","acc_yz","acc_zx"
+	var headers = ["name","style","acc_x","acc_y","acc_z","mag_x","mag_y","mag_z","acc_xy","acc_yz","acc_zx"
 	,"mag_xy","mag_yz","mag_zx"];
 	
 	var status = jsonWriter({data: users,fields: headers});
@@ -72,48 +72,50 @@ function writeToCSV(users){
 * and transforms them into mongoose model and store them in DB
 **/
 
-function process_store(req){
+function process_store(req,style){
+	console.log(style);
 	var name = req.body.name;
-
-	var acc_x = [];	
-	acc_x.push(((((req.body.acc_x1).toString()).replace(/[\[\]]+/g,"")).split(",")).map(function(val) {return Number(val);}));
+	var body = req.body;
+	/*var acc_x = [];	
+	acc_x.push(((((req.body.acc_x).toString()).replace(/[\[\]]+/g,"")).split(",")).map(function(val) {return Number(val);}));
 	
 	var acc_y = [];
-	acc_y.push(((((req.body.acc_y1).toString()).replace(/[\[\]]+/g,"")).split(",")).map(function(val) {return Number(val);})); 
+	acc_y.push(((((req.body.acc_y).toString()).replace(/[\[\]]+/g,"")).split(",")).map(function(val) {return Number(val);})); 
 
 
 	var acc_z = [];
-	acc_z.push(((((req.body.acc_z1).toString()).replace(/[\[\]]+/g,"")).split(",")).map(function(val) {return Number(val);}));
+	acc_z.push(((((req.body.acc_z).toString()).replace(/[\[\]]+/g,"")).split(",")).map(function(val) {return Number(val);}));
 
 	var mag_x = [];
-	mag_x.push(((((req.body.mag_x1).toString()).replace(/[\[\]]+/g,"")).split(",")).map(function(val) {return Number(val);}));
+	mag_x.push(((((req.body.mag_x).toString()).replace(/[\[\]]+/g,"")).split(",")).map(function(val) {return Number(val);}));
 	
 	var mag_y = [];
-	mag_y.push(((((req.body.mag_y1).toString()).replace(/[\[\]]+/g,"")).split(",")).map(function(val) {return Number(val);}));
+	mag_y.push(((((req.body.mag_y).toString()).replace(/[\[\]]+/g,"")).split(",")).map(function(val) {return Number(val);}));
 	
 	var mag_z = [];
-	mag_z.push(((((req.body.mag_z1).toString()).replace(/[\[\]]+/g,"")).split(",")).map(function(val) {return Number(val);}));
+	mag_z.push(((((req.body.mag_z).toString()).replace(/[\[\]]+/g,"")).split(",")).map(function(val) {return Number(val);}));
 	 
+*/
+	var acc_xy , acc_yz , acc_zx;
+	var mag_xy , mag_yz , mag_zx;
 
-	var acc_xy = [], acc_yz = [], acc_zx = [];
-	var mag_xy = [], mag_yz = [], mag_zx = [];
-
-	acc_xy.push(pcorr.correlation.pearson(acc_x,acc_y));
-	acc_yz.push(pcorr.correlation.pearson(acc_y,acc_z));
-	acc_zx.push(pcorr.correlation.pearson(acc_z,acc_x));
-	mag_xy.push(pcorr.correlation.pearson(mag_x,mag_y));
-	mag_yz.push(pcorr.correlation.pearson(mag_y,mag_z));
-	mag_zx.push(pcorr.correlation.pearson(mag_z,mag_x));
+	acc_xy = (pcorr.correlation.pearson(body.acc_x,body.acc_y));
+	acc_yz = (pcorr.correlation.pearson(body.acc_y,body.acc_z));
+	acc_zx = (pcorr.correlation.pearson(body.acc_z,body.acc_x));
+	mag_xy = (pcorr.correlation.pearson(body.mag_x,body.mag_y));
+	mag_yz = (pcorr.correlation.pearson(body.mag_y,body.mag_z));
+	mag_zx = (pcorr.correlation.pearson(body.mag_z,body.mag_x));
 
 
 	var nuser = new users({
 		name : name,
-		acc_x : acc_x,
-		acc_y : acc_y,
-		acc_z : acc_z,
-		mag_x : mag_x,
-		mag_y : mag_y,
-		mag_z : mag_z,
+		style : style,
+		acc_x : body.acc_x,
+		acc_y : body.acc_y,
+		acc_z : body.acc_z,
+		mag_x : body.mag_x,
+		mag_y : body.mag_y,
+		mag_z : body.mag_z,
 		acc_xy : acc_xy,
 		acc_yz : acc_yz,
 		acc_zx : acc_zx,

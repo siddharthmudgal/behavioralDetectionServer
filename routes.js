@@ -25,7 +25,7 @@ module.exports = function(app) {
 	**/
 	app.post("/walkers",function(req,res){
 		var results = process_store.walkers(req);
-		results.then(function(doc){
+		results.then(function(doc){			
 			res.send(doc);
 		});
 	});
@@ -37,17 +37,12 @@ module.exports = function(app) {
 	**/
 	app.post("/walking",function(req,res){
 		console.log("found walking");
-		res.send(process_store.processStore(req));
+		res.send(process_store.processStore(req,'walking'));
 	});
 
 	app.post("/running",function(req,res){
 		console.log("found running");
-		res.send(process_store.processStore(req));
-	});
-
-	app.post("/onfoot",function(req,res){
-		console.log("found onfoot");
-		res.send(process_store.processStore(req));
+		res.send(process_store.processStore(req,'running'));
 	});
 
 	/**
