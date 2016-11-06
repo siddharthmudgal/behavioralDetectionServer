@@ -76,28 +76,6 @@ function process_store(req,style){
 	console.log(style);
 	var name = req.body.name;
 	var body = req.body;
-	/*var acc_x = [];	
-	acc_x.push(((((req.body.acc_x).toString()).replace(/[\[\]]+/g,"")).split(",")).map(function(val) {return Number(val);}));
-	
-	var acc_y = [];
-	acc_y.push(((((req.body.acc_y).toString()).replace(/[\[\]]+/g,"")).split(",")).map(function(val) {return Number(val);})); 
-
-
-	var acc_z = [];
-	acc_z.push(((((req.body.acc_z).toString()).replace(/[\[\]]+/g,"")).split(",")).map(function(val) {return Number(val);}));
-
-	var mag_x = [];
-	mag_x.push(((((req.body.mag_x).toString()).replace(/[\[\]]+/g,"")).split(",")).map(function(val) {return Number(val);}));
-	
-	var mag_y = [];
-	mag_y.push(((((req.body.mag_y).toString()).replace(/[\[\]]+/g,"")).split(",")).map(function(val) {return Number(val);}));
-	
-	var mag_z = [];
-	mag_z.push(((((req.body.mag_z).toString()).replace(/[\[\]]+/g,"")).split(",")).map(function(val) {return Number(val);}));
-	 
-*/
-	var acc_xy , acc_yz , acc_zx;
-	var mag_xy , mag_yz , mag_zx;
 
 	acc_xy = (pcorr.correlation.pearson(body.acc_x,body.acc_y));
 	acc_yz = (pcorr.correlation.pearson(body.acc_y,body.acc_z));
