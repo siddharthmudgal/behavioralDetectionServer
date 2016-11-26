@@ -1,5 +1,13 @@
 # behavioralDetectionServer
 
+##Running instructions
+1. Node.js backend with Express and MongoDB
+2. Import the project into a folder
+3. From NodeJs terminal step into the project folder
+4. use npm install to install dependencies into node_modules folder
+5. use node app to start the server (make sure mongodb server is up and running before this step)
+6. hit localhost:3000 to see the graphs and tables
+
 Server built using MEAN stack, handlebars and fusion chart to show the comparison between two users way of walking.
 This could be used as an additional layer of security, like coursera uses typing pattern to identify a user.
  
